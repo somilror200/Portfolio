@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { NavLink, useLocation } from "react-router-dom";
-import { Moon, Sun, Menu, X, Download } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { useHideOnScroll, useTheme } from "../hooks";
 
@@ -44,13 +44,6 @@ const Nav = () => {
         </nav>
 
         <div className="nav-actions">
-          <a
-            href={`${process.env.PUBLIC_URL}/resume-somil-garak.pdf`}
-            className="btn btn-ghost nav-resume-btn"
-            download
-          >
-            <Download size={15} /> Resume
-          </a>
           <button
             className="icon-btn"
             onClick={toggleTheme}
