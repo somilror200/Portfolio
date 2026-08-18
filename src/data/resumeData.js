@@ -20,7 +20,7 @@ export const profile = {
 export const stats = [
   { value: "3+", label: "Years balancing study & work" },
   { value: "12+", label: "Core languages & frameworks" },
-  { value: "2", label: "Projects in the field" },
+  { value: "4", label: "Projects in the field" },
 ];
 
 export const toolbox = [
@@ -79,9 +79,27 @@ export const projects = [
       "Currently in the implementation phase, following tutor sign-off on the project plan",
     ],
     tags: ["Node.js", "Node-RED", "IoT", "AWS", "REST API"],
+    links: {},
   },
   {
     index: "02",
+    title: "Fleet Tracker",
+    role: "Full-Stack Fleet Management Dashboard",
+    status: "complete",
+    statusLabel: "Completed — Personal Project",
+    description:
+      "A fleet management dashboard for a simulated regional transport operator running the Melbourne–Ballarat corridor — giving dispatchers a single live view of vehicle locations, driver assignments, trip logs and maintenance/fuel alerts. Built to connect hands-on transport experience with modern full-stack development.",
+    highlights: [
+      "React, TypeScript and Tailwind frontend with a live map (Leaflet) and Recharts analytics",
+      "Node.js/Express backend with Drizzle ORM over SQLite, full CRUD for vehicles, drivers and trips",
+      "Real-time GPS simulation — vehicles move, accrue mileage, drain fuel and raise alerts automatically",
+      "Live map, tables and KPIs auto-refresh every few seconds via polling",
+    ],
+    tags: ["React", "TypeScript", "Express", "Drizzle ORM", "SQLite", "Leaflet"],
+    links: { repo: "https://github.com/somilror200/fleet-tracker" },
+  },
+  {
+    index: "03",
     title: "Subcon Pty Ltd — Company Website",
     role: "Responsive Business Website",
     status: "complete",
@@ -94,6 +112,23 @@ export const projects = [
       "Used Git/GitHub branching workflows throughout development",
     ],
     tags: ["React", "JavaScript", "HTML/CSS", "GitHub Pages", "Git"],
+    links: { live: "https://somilror200.github.io/Subcon/" },
+  },
+  {
+    index: "04",
+    title: "Grewal Constructions — Company Website",
+    role: "Marketing Website for a Melbourne Concreting & Carpentry Business",
+    status: "complete",
+    statusLabel: "Completed & Deployed",
+    description:
+      "Built the marketing website for Grewal Constructions, a Melbourne-based concreting and carpentry business working alongside builders including Henley Homes, Simonds Homes and Nostra Homes. A fast, front-end-only site showcasing the business, its services and completed projects.",
+    highlights: [
+      "Static HTML, CSS and JavaScript — no backend, no build step",
+      "Service and gallery sections tailored to a trades/construction audience",
+      "Deployed and hosted on GitHub Pages",
+    ],
+    tags: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    links: { live: "https://somilror200.github.io/grewal-construction-website/" },
   },
 ];
 

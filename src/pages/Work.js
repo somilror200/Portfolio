@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, Github } from "lucide-react";
+import { CheckCircle2, Github, ExternalLink } from "lucide-react";
 import { projects, profile } from "../data/resumeData";
 import { useScrollReveal } from "../hooks";
 
@@ -13,8 +13,8 @@ const Work = () => {
           <div className="section-kicker reveal">Selected Work</div>
           <h1 className="section-title reveal">Projects & case studies</h1>
           <p className="section-sub reveal">
-            Two projects that show how I think — one still being built, one
-            already shipped.
+            Four projects that show how I think — from a university IoT
+            system still in progress to client sites already live.
           </p>
         </div>
       </section>
@@ -53,9 +53,34 @@ const Work = () => {
                       </li>
                     ))}
                   </ul>
-                  <span className="project-note">
-                    Repository link available on request — reach out and I'll share it.
-                  </span>
+                  {project.links?.live || project.links?.repo ? (
+                    <div className="project-links">
+                      {project.links.live && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-ghost btn-sm"
+                        >
+                          <ExternalLink size={15} /> View Live Site
+                        </a>
+                      )}
+                      {project.links.repo && (
+                        <a
+                          href={project.links.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-ghost btn-sm"
+                        >
+                          <Github size={15} /> View Repository
+                        </a>
+                      )}
+                    </div>
+                  ) : (
+                    <span className="project-note">
+                      Repository link available on request — reach out and I'll share it.
+                    </span>
+                  )}
                 </div>
               </article>
             ))}
