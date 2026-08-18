@@ -1,58 +1,90 @@
 import React from "react";
+import { Mail, Phone, MapPin, Github, Download } from "lucide-react";
+import { profile } from "../data/resumeData";
+import { useScrollReveal } from "../hooks";
 
-const Contact = () => (
-  <section className="section contact">
-    <h2>Get in Touch.</h2>
-    <div className="contact-grid">
-      <div>
-        <p>
-            I'm always open to exciting opportunities, collaborations, or just a friendly chat. 
-            Whether you want to discuss a project, explore an internship, or talk tech—feel free to reach out through 
-            the form below or connect with me on LinkedIn.
-        </p>
-        <p>
-            I respond promptly and look forward to hearing from you. Let’s build something awesome together!
-        </p>
-      </div>
-      <form
-        action="https://formspree.io/f/mgvyogjz"
-        method="POST"
-        >
-        <label>Name *</label>
-        <div className="name-fields">
-            <input type="text" name="first" placeholder="First" required />
-            <input type="text" name="last" placeholder="Last" required />
+const Contact = () => {
+  useScrollReveal();
+
+  return (
+    <>
+      <section className="page-hero">
+        <div className="shell">
+          <div className="section-kicker reveal">Contact</div>
+          <h1 className="section-title reveal">Let's talk</h1>
+          <p className="section-sub reveal">
+            Open to graduate, junior developer and internship opportunities —
+            the quickest way to reach me is email.
+          </p>
         </div>
+      </section>
 
-        <label>Email *</label>
-        <input type="email" name="email" required />
+      <section className="section">
+        <div className="shell">
+          <div className="contact-grid">
+            <a href={`mailto:${profile.email}`} className="contact-card reveal">
+              <div className="icon-wrap">
+                <Mail size={20} />
+              </div>
+              <div>
+                <small>Email</small>
+                <strong>{profile.email}</strong>
+              </div>
+            </a>
 
-        <label>Comment *</label>
-        <textarea name="message" required></textarea>
+            <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="contact-card reveal">
+              <div className="icon-wrap">
+                <Phone size={20} />
+              </div>
+              <div>
+                <small>Phone</small>
+                <strong>{profile.phone}</strong>
+              </div>
+            </a>
 
-        <button type="submit">Submit</button>
-    </form>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card reveal"
+            >
+              <div className="icon-wrap">
+                <Github size={20} />
+              </div>
+              <div>
+                <small>GitHub</small>
+                <strong>github.com/somilror200</strong>
+              </div>
+            </a>
 
-    </div>
-    <div className="contact-links">
-      <a
-        href="https://www.linkedin.com/in/somil-garak-200"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        LinkedIn
-      </a>{" "}
-      |{" "}
-      <a
-        href="https://github.com/somilror200"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-      </a>
-    </div>
-  </section>
-);
+            <div className="contact-card reveal">
+              <div className="icon-wrap">
+                <MapPin size={20} />
+              </div>
+              <div>
+                <small>Location</small>
+                <strong>{profile.location}</strong>
+              </div>
+            </div>
+          </div>
+
+          <div className="contact-cta reveal">
+            <h2>Prefer a document?</h2>
+            <p>Grab a copy of my full resume — updated to reflect my current software focus.</p>
+            <div className="contact-actions">
+              <a
+                href={`${process.env.PUBLIC_URL}/resume-somil-garak.pdf`}
+                className="btn btn-primary"
+                download
+              >
+                <Download size={16} /> Download Resume (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default Contact;
-

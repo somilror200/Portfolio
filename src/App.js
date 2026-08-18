@@ -1,35 +1,37 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Work from "./pages/Work";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 import "./styles.css";
 
-const App = () => {
-  return (
-    <Router>
-      <Navbar />
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+const App = () => (
+  <Router>
+    <ScrollToTop />
+    <Nav />
+    <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work" element={<Work />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
-  );
-};
-
-const Navbar = () => (
-  <nav className="navbar">
-    <ul>
-      <li><Link to="/">HOME</Link></li>
-      <li><Link to="/work">MY WORK</Link></li>
-      <li><Link to="/about">ABOUT</Link></li>
-      <li><Link to="/contact">CONTACT</Link></li>
-    </ul>
-  </nav>
+    </main>
+    <Footer />
+  </Router>
 );
 
 export default App;
-

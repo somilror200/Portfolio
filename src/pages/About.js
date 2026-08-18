@@ -1,46 +1,116 @@
 import React from "react";
+import { GraduationCap, Users } from "lucide-react";
+import { profile, education, experience, certifications } from "../data/resumeData";
+import { useScrollReveal } from "../hooks";
 
-const About = () => (
-  <section className="section about">
-    <h2>About Me.</h2>
-    <div className="about-grid">
-    <img
-    src="https://media.licdn.com/dms/image/v2/C5603AQGrHZKWNPZj4w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1643972369135?e=1755129600&v=beta&t=xYbJldwY7gSozg01iRpwplWfNKC4SLYoKR2WxylU-es"
-    alt="Somil Garak"
-    />
+const About = () => {
+  useScrollReveal();
 
-      <div>
-        <p>
-          I'm a penultimate-year Bachelor of Computer Science student at Deakin University,
-          with a strong passion for building modern web and mobile applications that solve real-world problems.
-        </p>
-        <p>
-          Over the years, I’ve honed my skills in frontend technologies like React, JavaScript, HTML, and CSS, 
-          and backend development using C# and SQL. I’ve also worked with Android (Java/Kotlin), and have
-          deployed real-world applications including a portfolio site, a Lost and Found platform, and a responsive business site for Subcon PL.
-        </p>
+  return (
+    <>
+      <section className="page-hero">
+        <div className="shell">
+          <div className="section-kicker reveal">About</div>
+          <h1 className="section-title reveal">From job sites to codebases</h1>
+        </div>
+      </section>
 
-        <h3>EDUCATION</h3>
-        <p>Deakin University – Bachelor of Computer Science (Expected 2025)</p>
+      <section className="section">
+        <div className="shell about-grid">
+          <div className="about-card reveal">
+            <p>{profile.summary}</p>
+            <p>{profile.seeking}</p>
 
-        <h3>EXPERIENCE / SKILLS</h3>
-        <p>
-          React, JavaScript, HTML, CSS, C#, SQL, Android (Java/Kotlin), Git, Firebase, REST APIs,
-          Web Deployment (GitHub Pages & Netlify)
-        </p>
+            <div className="about-stat-row">
+              <div>
+                <div className="hero-fact-value mono" style={{ fontSize: "1.25rem" }}>
+                  {education.institution}
+                </div>
+                <div className="hero-fact-label">{education.program}</div>
+              </div>
+            </div>
+          </div>
 
-        <h3>AWARDS / RECOGNITION</h3>
-        <p>
-          Team Lead at Subcon PL<br />
-          Member of Deakin Software Engineering Club (DSEC)
-        </p>
+          <div>
+            <div className="reveal" style={{ marginBottom: "3rem" }}>
+              <h2 style={{ fontSize: "var(--text-xl)", marginBottom: "1.25rem" }}>
+                <GraduationCap
+                  size={20}
+                  style={{ verticalAlign: "-4px", marginRight: 8, color: "var(--primary)" }}
+                />
+                Education
+              </h2>
+              <div className="timeline">
+                <div className="timeline-item">
+                  <div className="timeline-date mono">{education.status}</div>
+                  <h3>{education.program}</h3>
+                  <div className="org">
+                    {education.institution} — {education.location}
+                  </div>
+                  <p>Relevant coursework:</p>
+                  <ul>
+                    {education.coursework.map((c) => (
+                      <li key={c}>{c}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="timeline-item">
+                  <div className="timeline-date mono">{education.club.period}</div>
+                  <h3>{education.club.role}</h3>
+                  <div className="org">{education.club.name}</div>
+                  <p>{education.club.description}</p>
+                </div>
+              </div>
+            </div>
 
-        <a href="/work">
-          <button>VIEW MY WORK</button>
-        </a>
-      </div>
-    </div>
-  </section>
-);
+            <div className="reveal">
+              <h2 style={{ fontSize: "var(--text-xl)", marginBottom: "1.25rem" }}>
+                <Users
+                  size={20}
+                  style={{ verticalAlign: "-4px", marginRight: 8, color: "var(--primary)" }}
+                />
+                Experience
+              </h2>
+              <div className="timeline">
+                {experience.map((exp) => (
+                  <div className="timeline-item" key={exp.title + exp.org}>
+                    <div className="timeline-date mono">{exp.date}</div>
+                    <h3>{exp.title}</h3>
+                    <div className="org">
+                      {exp.org} — {exp.location}
+                    </div>
+                    <p>{exp.description}</p>
+                    <ul>
+                      {exp.bullets.map((b) => (
+                        <li key={b}>{b}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="shell">
+          <div className="section-head reveal">
+            <div className="section-kicker">Certifications</div>
+            <h2 className="section-title">Continuous learning</h2>
+          </div>
+          <div className="cert-grid">
+            {certifications.map((cert) => (
+              <div className="cert-card reveal" key={cert.title}>
+                <div className="cert-issuer">{cert.issuer}</div>
+                <h4>{cert.title}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default About;
