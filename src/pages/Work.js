@@ -13,8 +13,9 @@ const Work = () => {
           <div className="section-kicker reveal">Selected Work</div>
           <h1 className="section-title reveal">Projects & case studies</h1>
           <p className="section-sub reveal">
-            Four projects that show how I think — from a university IoT
-            system still in progress to client sites already live.
+            Five projects that show how I think — from a university IoT
+            system still in progress to client sites already live, plus the
+            personal story behind all of it.
           </p>
         </div>
       </section>
@@ -89,7 +90,7 @@ const Work = () => {
           <div className="contact-cta reveal" style={{ marginTop: "3rem" }}>
             <h2>More on GitHub</h2>
             <p>
-              These two are the highlights — the rest of my day-to-day
+              These are the highlights — the rest of my day-to-day
               coursework, experiments and smaller repos live on my GitHub
               profile.
             </p>

@@ -20,7 +20,7 @@ export const profile = {
 export const stats = [
   { value: "3+", label: "Years balancing study & work" },
   { value: "12+", label: "Core languages & frameworks" },
-  { value: "4", label: "Projects in the field" },
+  { value: "5", label: "Projects in the field" },
 ];
 
 export const toolbox = [
@@ -129,6 +129,22 @@ export const projects = [
     ],
     tags: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
     links: { live: "https://somilror200.github.io/grewal-construction-website/" },
+  },
+  {
+    index: "05",
+    title: "My Story — Personal Site",
+    role: "Personal Narrative & Background Site",
+    status: "complete",
+    statusLabel: "Completed & Deployed",
+    description:
+      "A personal site telling the story behind the resume — the journey from India to Australia, years of hands-on construction and interstate transport work, and the move into a Computer Science degree and software direction. Built as a companion piece to this portfolio, not a replacement for it.",
+    highlights: [
+      "Semantic HTML, responsive CSS and vanilla JavaScript — no framework or build step",
+      "Light/dark theme toggle with scroll-reveal interactions",
+      "Tells the journey from construction and transport work into software, in my own words",
+    ],
+    tags: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    links: { live: "https://somilror200.github.io/somil-garak/" },
   },
 ];
 

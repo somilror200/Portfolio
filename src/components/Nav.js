@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { NavLink, useLocation } from "react-router-dom";
-import { Moon, Sun, Menu, X, Download, ArrowUpRight } from "lucide-react";
+import { Moon, Sun, Menu, X, Download } from "lucide-react";
 import Logo from "./Logo";
 import { useHideOnScroll, useTheme } from "../hooks";
 
@@ -11,13 +11,6 @@ const links = [
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
-
-// External link out to a separate personal-narrative site (not part of this
-// React app), opened in a new tab from both the desktop and mobile nav.
-const externalLink = {
-  href: "https://somilror200.github.io/somil-garak/",
-  label: "My Story",
-};
 
 const Nav = () => {
   const [theme, toggleTheme] = useTheme();
@@ -48,14 +41,6 @@ const Nav = () => {
               {link.label}
             </NavLink>
           ))}
-          <a
-            href={externalLink.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-external-link"
-          >
-            {externalLink.label} <ArrowUpRight size={13} />
-          </a>
         </nav>
 
         <div className="nav-actions">
@@ -98,14 +83,6 @@ const Nav = () => {
               {link.label}
             </NavLink>
           ))}
-          <a
-            href={externalLink.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-external-link"
-          >
-            {externalLink.label} <ArrowUpRight size={13} />
-          </a>
         </nav>,
         document.body
       )}
