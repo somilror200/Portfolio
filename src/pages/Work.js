@@ -13,9 +13,9 @@ const Work = () => {
           <div className="section-kicker reveal">Selected Work</div>
           <h1 className="section-title reveal">Projects & case studies</h1>
           <p className="section-sub reveal">
-            Five projects that show how I think — from a university IoT
-            system still in progress to client sites already live, plus the
-            personal story behind all of it.
+            Six projects that show how I think — from a university IoT
+            system still in progress and client sites already live, to the
+            personal story behind it all and an early open-source contribution.
           </p>
         </div>
       </section>

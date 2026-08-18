@@ -20,7 +20,7 @@ export const profile = {
 export const stats = [
   { value: "3+", label: "Years balancing study & work" },
   { value: "12+", label: "Core languages & frameworks" },
-  { value: "5", label: "Projects in the field" },
+  { value: "6", label: "Projects in the field" },
 ];
 
 export const toolbox = [
@@ -145,6 +145,22 @@ export const projects = [
     ],
     tags: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
     links: { live: "https://somilror200.github.io/somil-garak/" },
+  },
+  {
+    index: "06",
+    title: "Instagram Clone",
+    role: "Open-Source Contribution — Forked Android Project",
+    status: "complete",
+    statusLabel: "Forked Project — Small Contribution",
+    description:
+      "An Android Instagram clone forked from another developer's project, used to get hands-on with Kotlin and Firebase-backed app development. Not an original build — included here as an early, honest look at reading someone else's codebase and shipping a small change to it.",
+    highlights: [
+      "Forked a Kotlin/Android app that recreates core Instagram functionality with Firebase for storage",
+      "Read and navigated an existing codebase written by another developer",
+      "Contributed a layout/UI fix on top of the original project",
+    ],
+    tags: ["Kotlin", "Android", "Firebase"],
+    links: { repo: "https://github.com/somilror200/Instagram-Clone" },
   },
 ];
 
