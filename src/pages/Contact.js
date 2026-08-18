@@ -72,13 +72,9 @@ const Contact = () => {
             <h2>Prefer a document?</h2>
             <p>Grab a copy of my full resume — updated to reflect my current software focus.</p>
             <div className="contact-actions">
-              <a
-                href={`${process.env.PUBLIC_URL}/resume-somil-garak.pdf`}
-                className="btn btn-primary"
-                download
-              >
+              <button type="button" className="btn btn-primary">
                 <Download size={16} /> Download Resume (PDF)
-              </a>
+              </button>
             </div>
           </div>
         </div>
